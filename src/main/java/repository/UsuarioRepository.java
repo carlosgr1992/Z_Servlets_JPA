@@ -59,7 +59,7 @@ public class UsuarioRepository {
             throw e;
         }
     }
-    
+    // Esto no tiene mucho sentido porque ya haciendo el updateUsuario puedes coger de ahi el dato del id... 
     public void updateUsuarioById(long id, Usuario usuarioNuevo) {
     
     	Usuario usuarioAntiguo = findUsuario(id);

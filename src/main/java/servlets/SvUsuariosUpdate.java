@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,13 +22,20 @@ public class SvUsuariosUpdate extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		long id = Long.parseLong(request.getParameter("idUserCheck"));
+		
+		Usuario usu = usuarioRepo.findUsuario(id);
+		
+		if(usu != null) {
+			request.setAttribute("usuario", usu);
+			request.getRequestDispatcher("editarUsuarios.jsp").forward(request, response);
+		}else System.out.println("El ID de usuario no existe");
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-		
-		long id = Long.parseLong(request.getParameter("idUserUpdate"));
+
+		long id = Long.parseLong(request.getParameter("idUser"));
 		String dniNuevo = request.getParameter("dniUserUpdate");
 		String nameNuevo = request.getParameter("nameUserUpdate");
 		String surNameNuevo = request.getParameter("surNameUserUpdate");

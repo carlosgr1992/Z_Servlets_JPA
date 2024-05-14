@@ -31,12 +31,13 @@
 	</form>
 
 	<h1>Modificar datos de usuario</h1>
-	<form action="SvUsuariosUpdate" method="POST">
-		<p>Id: <input type="text" name="idUserUpdate"/></p> 
+	<form action="SvUsuariosUpdate" method="GET">
+		<p>Id: <input type="text" name="idUserCheck"/></p> 
+		<!--  <p>Id: <input type="text" name="idUserUpdate"/></p> 
 		<p>Dni: <input type="text" name="dniUserUpdate"/></p> 
 		<p>Nombre: <input type="text" name="nameUserUpdate"/></p> 
 		<p>Apellidos: <input type="text" name="surNameUserUpdate"/></p> 
-		<p>Telefono: <input type="text" name="telUserUpdate"/></p> 
+		<p>Telefono: <input type="text" name="telUserUpdate"/></p>	 -->
 		<button type="submit">Modificar</button>
 	</form>
 	
